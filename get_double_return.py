@@ -3,8 +3,8 @@ from functools import wraps
 def double_return(fn):
     @wraps(fn)
     def wrapper (*args, **kwargs):
-        
-        return [fn(*args, **kwargs), fn(*args, **kwargs)]
+        val = fn(*args, **kwargs)
+        return [val, val]
     return wrapper
     
 
@@ -12,4 +12,4 @@ def double_return(fn):
 def greet(name):
     return "Hi I'm " + name
 
-print(greet("Cole"))
+print(greet("Cornelia"))
