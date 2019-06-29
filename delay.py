@@ -4,7 +4,7 @@ from time import sleep
 def delay(time):
        def inner(fn):
            
-           print ("Waiting {} before running {}".format(time, fn.__name__))
+           print ("Waiting {}s before running {}".format(time, fn.__name__))
            sleep(time)
            @wraps(fn)
            def wrapper(*args, **kwargs):
