@@ -35,7 +35,19 @@ class DeckTest (unittest.TestCase):
         self.assertEqual(self.deck.count(), 51)
 
     def test_deal_sufficient_cards(self):
-        """_deal should return the number of cards specified, and take that numbe of cards away from the deck"""
+        """_deal should return the number of cards specified, and take that number of cards away from the deck"""
         cards = self.deck._deal(10)
         self.assertEqual(len(cards), 10)
-        self.assertEqual(se;f.deck.count(), 42)
+        self.assertEqual(self.deck.count(), 42)
+    
+    def test_deal_insufficient_cards(self):
+        """in this case, _deal should return the remaining number of cards and the deck should be empty afterwards"""
+        cards = self.deck._deal(100)
+        self.assertEqual(len(cards), 52)
+        self.assertEqual(self.deck.count(), 0)
+
+    def test_deal_no_cards(self):
+        """_deal should throw a value error if the deck is empty"""
+        self.deck._deal(self.deck.count())
+        with self.assertRaises(ValueError):
+            self.deck._deal(1)
