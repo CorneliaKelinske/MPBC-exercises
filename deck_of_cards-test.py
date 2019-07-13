@@ -51,3 +51,16 @@ class DeckTest (unittest.TestCase):
         self.deck._deal(self.deck.count())
         with self.assertRaises(ValueError):
             self.deck._deal(1)
+    
+    def test_deal_card(self):
+        """deal_card shoud deal a single card from the deck"""
+        card = self.deck.cards[-1]
+        dealt_card = self.deck.deal_card()
+        self.assertEqual(card, dealt_card)
+        self.assertEqual(self.deck.count(), 51)
+
+    def test_deal_hand(self):
+        """deal_hand should deal the number of cards passed in as the hand size"""
+        cards = self.deck.deal_hand(20)
+        self.assertEqual(len(cards), 20)
+        self.assertEqual(self.deck.count(), 32)
