@@ -64,3 +64,19 @@ class DeckTest (unittest.TestCase):
         cards = self.deck.deal_hand(20)
         self.assertEqual(len(cards), 20)
         self.assertEqual(self.deck.count(), 32)
+
+    def test_shuffle_full_deck(self):
+        """shuffle should shuffle the deck if the deck is full"""
+        cards = self.deck.cards[:]
+        self.deck.shuffle()
+        self.assertNotEqual(cards, self.deck.cards)
+        self.assertEqual(self.deck.count(), 52)
+    
+    def test_shuffle_not_full_deck(self):
+        """shuffle should throw a ValueError if the deck is not full"""
+        self.deck._deal(1)
+        with self.assertRaises(ValueError):
+            self.deck.shuffle()
+    
+if __name__ == "__main__":
+    unittest.main()
