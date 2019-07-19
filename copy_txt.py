@@ -1,4 +1,4 @@
-def copy (file, copy_file):
+def copy(file, copy_file):
     with open (file) as f:
        with open (copy_file, "w") as f1:
            for line in f:
