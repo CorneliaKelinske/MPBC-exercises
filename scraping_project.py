@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from time import sleep
+import random
 
 
 all_quotes = []
@@ -9,7 +10,7 @@ url = "/page/1"
 
 while url:
         response = requests.get(f"{base_url}{url}")
-        print(f"Now scrapping {base_url}{url}...")
+        #print(f"Now scrapping {base_url}{url}...")
         soup = BeautifulSoup(response.text, "html.parser")
         quotes = soup.find_all(class_="quote")
 
@@ -23,7 +24,7 @@ while url:
         next_button = soup.find(class_="next")
         url = next_button.find("a")["href"] if next_button else None
         #sleep(2)
-print(all_quotes)
+print(random.choice(all_quotes)["text"])
 
 
 
