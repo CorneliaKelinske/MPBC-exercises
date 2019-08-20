@@ -24,7 +24,10 @@ while url:
         next_button = soup.find(class_="next")
         url = next_button.find("a")["href"] if next_button else None
         #sleep(2)
-print(random.choice(all_quotes)["text"])
+#print(random.choice(all_quotes)["text"])
+
+chosen_quote = random.choice(all_quotes)
+print(chosen_quote["text"])
 
 
 
