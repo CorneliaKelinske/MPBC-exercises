@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from time import sleep
-import random
+from random import choice
 
 
 all_quotes = []
@@ -26,9 +26,18 @@ while url:
         #sleep(2)
 #print(random.choice(all_quotes)["text"])
 
-chosen_quote = random.choice(all_quotes)
+chosen_quote = choice(all_quotes)
+remaining_guesses = 4
+print("Here is a quote:")
 print(chosen_quote["text"])
+print(chosen_quote["author"])
+guess = " "
 
+while guess.lower() != chosen_quote["author"].lower() and remaining_guesses > 0:
+        guess = input(f"Who said this? Guess! You have {remaining_guesses} more guesses. ")
+        remaining_guesses -= 1
+       
+print("after while loop")
 
 
 
