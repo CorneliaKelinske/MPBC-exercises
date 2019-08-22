@@ -44,13 +44,18 @@ while guess.lower() != chosen_quote["author"].lower() and remaining_guesses > 0:
                
                 print(f"Here is a hint: the author was born on {birth_date} in {birth_place}.")
                 
+        elif remaining_guesses == 2:
+                first_name = chosen_quote["author"].split(" ")[0][0]
+                print(f"Here is another hint: the first letter of the author's first name is {first_name}")
         else:
-                print("try again")
+                last_name = chosen_quote["author"].split(" ")[-1][0]
+                print(f"Here is another hint: the first letter of the author's last name is {last_name}")
+                
 
 
                
   
-                #I need to make another scraping call, go to biolink, and then scrape there for author birth date and place
+               
 
        
 print("after while loop")
