@@ -47,9 +47,11 @@ while guess.lower() != chosen_quote["author"].lower() and remaining_guesses > 0:
         elif remaining_guesses == 2:
                 first_name = chosen_quote["author"].split(" ")[0][0]
                 print(f"Here is another hint: the first letter of the author's first name is {first_name}")
-        else:
+        elif remaining_guesses == 1:
                 last_name = chosen_quote["author"].split(" ")[-1][0]
                 print(f"Here is another hint: the first letter of the author's last name is {last_name}")
+        else:
+                break
                 
 
 
