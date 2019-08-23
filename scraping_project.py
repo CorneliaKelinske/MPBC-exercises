@@ -44,7 +44,7 @@ while play == "yes":
                         birth_date = soup.find(class_="author-born-date").get_text()
                         birth_place = soup.find(class_="author-born-location").get_text()
                
-                        print(f"Here is a hint: the author was born on {birth_date} in {birth_place}.")
+                        print(f"Here is a hint: the author was born on {birth_date} {birth_place}.")
                 
                 elif remaining_guesses == 2 and guess.lower() != chosen_quote["author"].lower():
                         first_name = chosen_quote["author"].split(" ")[0][0]
