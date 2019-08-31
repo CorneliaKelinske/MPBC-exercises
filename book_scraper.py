@@ -9,6 +9,6 @@ class BookSpider(scrapy.Spider):
     def parse(self, response):
         for article in response.css('article.product_pod'):
             yield {
-                'price': article.css(".price_color::text")
+                'price': article.css(".price_color::text").extract_first()
              #'title':
             }
