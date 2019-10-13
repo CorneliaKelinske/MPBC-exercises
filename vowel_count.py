@@ -18,3 +18,8 @@ def vowel_count(string):
 
 
 print(vowel_count('Colt'))
+
+# and here is how easy this could have been:
+def better_vowel_count(string):
+    lower_s = string.lower()
+    return {letter: lower_s.count(letter) for letter in lower_s if letter in "aeiou"}
