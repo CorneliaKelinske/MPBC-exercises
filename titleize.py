@@ -9,3 +9,7 @@ def titleize(title):
     return result
 
 print(titleize("this is awesome"))
+
+#the proper bootcamp solution
+def titleize_BC(string):
+    return ' '.join(s[0].upper() + s[1:] for s in string.split(' '))
