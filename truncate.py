@@ -27,3 +27,12 @@ print(truncate("Another test", 12))
 print(truncate("Woah", 4))
 print(truncate("Woah", 3))
 print(truncate("Holy guacamole!", 152))
+
+#Bootcamp solution
+def truncate_BC(string, n):
+    if (n < 3):
+        return "Truncation must be at least 3 characters."
+    if (n > len(string) + 2):
+        return string
+ 
+    return string[:n - 3] + "..."
