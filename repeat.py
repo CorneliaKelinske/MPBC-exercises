@@ -12,3 +12,14 @@ def repeat(string, number):
     
 
 print(repeat('abc', 5))
+
+#The Bootcamp solution:
+def repeat_BC(string, num):
+    if (num == 0):
+        return ''
+    i = 0
+    newStr = ''
+    while (i < num):
+        newStr += string
+        i += 1
+    return newStr
