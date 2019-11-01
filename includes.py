@@ -4,7 +4,7 @@ def includes(col, val, *args):
             return True
         return False
     if args:          
-        if val in col[args[0] : len(col)]:            
+        if val in col[args[0] :]:            
             return True
         return False
     if val in col:
@@ -17,3 +17,11 @@ print(includes({ 'a': 1, 'b': 2 }, 1)) # True
 print(includes({ 'a': 1, 'b': 2 }, 'a')) # False
 print(includes('abcd', 'b')) # True
 print(includes('abcd', 'e')) # False
+
+#The bootcamp solution:
+def includes_BC(item,val,start=None):
+    if type(item) == dict:
+        return val in item.values()
+    if start is None:
+        return val in item
+    return val in item[start:]
