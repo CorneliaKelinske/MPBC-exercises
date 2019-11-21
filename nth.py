@@ -13,3 +13,9 @@ def nth(list, num):
     return list[num]
 
 print(nth(['a', 'b', 'c', 'd'], -1))
+
+def nth_BC(arr, idx):
+    if idx >= 0:
+        return arr[idx]
+    return arr[idx + len(arr)]
+
