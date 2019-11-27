@@ -42,18 +42,17 @@ def sum_up_diagonals(list_N):
     i2 = len(list_N)-1
     diagonal_sum = 0
 
-    for item in list_N:
-        while i1 <= len(list_N)-1:
-            print(item[i1])
-            diagonal_1 += item[i1]
-            i1 +=1
+    while i1 <= len(list_N)-1:
+      for item in list_N:                
+        diagonal_1 += item[i1]
+        i1 +=1
     diagonal_sum += diagonal_1
-    print(diagonal_sum)
+    #print(diagonal_sum)
 
-    for item in list_N:
-        while i2 >= 0:
-            diagonal_2 += item[i2]
-            i2 -= 1
+    while i2 >= 0:
+      for item in list_N:        
+          diagonal_2 += item[i2]
+          i2 -= 1
     diagonal_sum += diagonal_2
 
     return diagonal_sum
