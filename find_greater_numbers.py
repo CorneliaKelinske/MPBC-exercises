@@ -6,7 +6,16 @@ find_greater_numbers([]) # 0
 '''
 
 def find_greater_numbers(numbers):
+    count = 0
     list_of_numbers = [numbers[numbers.index(num) : len(numbers)] for num in numbers]
-    return(list_of_numbers)
+    for item in list_of_numbers:
+        count += count_greater_numbers(item)
+        
+    return count
  
-print(find_greater_numbers([2,6,5,7]))
+
+def count_greater_numbers(list_n):
+    return len([item for item in list_n if item > list_n[0]])
+    
+
+print(find_greater_numbers([]))
