@@ -64,3 +64,14 @@ list1 = [
 ]
  
 print(sum_up_diagonals(list1))
+
+
+def sum_up_diagonals_BC(arr):
+    total = 0
+    
+    for i,val in enumerate(arr):
+        total += arr[i][i]
+        total += arr[i][-1-i]
+    return total
+
+print(sum_up_diagonals_BC(list1))
