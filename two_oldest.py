@@ -8,3 +8,6 @@ def two_oldest_ages(numbers):
     return sorted_numbers[len(numbers)-2 : len(numbers)]
 
 print(two_oldest_ages([6,1,9,10,4]))
+
+def two_oldest_ages_BC(ages):
+    return sorted(ages)[-2:]
