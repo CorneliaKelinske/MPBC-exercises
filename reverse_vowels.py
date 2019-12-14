@@ -9,7 +9,14 @@ reverse_vowels("why try, shy fly?") # "why try, shy fly?"
 def reverse_vowels(input_str):
     input_str =list(input_str)
     vowels = [item for item in input_str if item in ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"]]
-    return vowels
+    reversed_vowels = []
+    result = ""
+    for item in input_str:
+        if item not in ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"]:
+            reversed_vowels.append(item)
+        else:
+            reversed_vowels.append(vowels.pop())
+    return result.join(reversed_vowels)
 
 
-print(reverse_vowels("Hello"))
+print(reverse_vowels("why try, shy fly?"))
