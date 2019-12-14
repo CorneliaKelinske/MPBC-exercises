@@ -9,7 +9,7 @@ def three_odd_numbers(numbers):
     while len(numbers) > 3:
         while sum(numbers[:3]) % 2 == 0:            
             del numbers[0]
-        if sum(numbers[:3]) % 2 != 0:            
+        if sum(numbers[:3]) % 2 != 0 and len(numbers) >= 3:        
             return True
     return False
 
