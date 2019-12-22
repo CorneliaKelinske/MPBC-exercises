@@ -15,8 +15,8 @@ def running_average(n1):
         numbers = [n1]
         numbers.append(n2)
         print(numbers)
-        return ((n1 + n2) / len(numbers))
+        return round((n1 + n2) / len(numbers), 2)
     return inner_function
 
 rAvg = running_average(1)
-print(rAvg(3))
+print(rAvg(2))
