@@ -38,3 +38,15 @@ print(rAvg(12))
 rAvg2 = running_average()
 print(rAvg2(1)) # 1
 print(rAvg2(3)) # 2
+
+
+def running_average_BC():
+    running_average.accumulator = 0
+    running_average.size = 0
+  
+    def inner(number):
+        running_average.accumulator += number
+        running_average.size += 1
+        return running_average.accumulator / running_average.size
+    
+    return inner
