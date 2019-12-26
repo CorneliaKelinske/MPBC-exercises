@@ -9,17 +9,7 @@ rAvg2(1) # 1
 rAvg2(3) # 2
 '''
 
-# def running_average(n1):
-#     numbers = 0
-#     def inner_function():
-        
-#         numbers.append(n2)
-#         print(numbers)
-#         return round((n1 + n2) / len(numbers), 2)
-#     return inner_function
 
-# rAvg = running_average(1)
-# print(rAvg(2))
 
 def running_average():
     numbers = []
