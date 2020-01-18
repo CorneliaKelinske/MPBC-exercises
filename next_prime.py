@@ -30,16 +30,16 @@ def next_prime():
 
         if is_prime(num):
             yield num
-        else:
-            yield []
+        
         num += 1
-        print(num)
+      
 
 
 
 
 #print(is_prime(10))
 primes = next_prime()
-print(next(primes))
-print(next(primes))
-print(next(primes))
+# print(next(primes))
+# print(next(primes))
+# print(next(primes))
+print([next(primes) for i in range(25)])
