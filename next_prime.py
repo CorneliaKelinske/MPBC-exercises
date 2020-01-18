@@ -23,13 +23,23 @@ def is_prime(number):
     return True
 
 
-def next_prime(n):
+def next_prime():
     num = 0
-    while num <= n:
+    while True:
+       
+
         if is_prime(num):
             yield num
-            num += 1
+        else:
+            yield []
+        num += 1
+        print(num)
+
+
 
 
 #print(is_prime(10))
-primes = next_prime(25)
+primes = next_prime()
+print(next(primes))
+print(next(primes))
+print(next(primes))
