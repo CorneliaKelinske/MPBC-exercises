@@ -29,3 +29,9 @@ print(counter('m'))
 counter2 = letter_counter('This Is Really Fun!')
 print(counter2('i'))
 print(counter2('t'))
+
+def letter_counter_bc(s):
+    letter_counter.val = s
+    def inner(char):
+        return len(list(c.lower() for c in letter_counter.val.lower() if c == char))
+    return inner
