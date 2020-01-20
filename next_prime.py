@@ -33,12 +33,23 @@ def next_prime():
         
         num += 1
       
+def next_prime_BC():
+    num = 2
+    all_primes = set()
+    while True:
+        for prime in all_primes:
+            if num % prime == 0:
+                break
+        else:
+            all_primes.add(num)
+            yield num
+        num += num % 2 + 1
 
 
 
 
 #print(is_prime(10))
-primes = next_prime()
+primes = next_prime_BC()
 # print(next(primes))
 # print(next(primes))
 # print(next(primes))
